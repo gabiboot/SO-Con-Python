@@ -1,0 +1,17 @@
+
+#Buscar una coincidencia especifica con mayuscula o minuscula
+print(re.search(r"[Pp]ython", "Python"))
+
+# Buscar coincidencia de rango entre minusculas en cualquier letra
+print(re.search(r"[a-z]way", "the end of the highway"))
+#imprime lo siguiente, rango 18(h) a 22
+<re.Match object; span=(18, 22), match='hway'> 
+
+print(re.findall(r"dogs|cats", "I like both dogs and cats."))
+['dogs', 'cats']
+
+import re
+print(re.search(r"Py.*n", "Pygmalion"))
+print(re.search(r"Py.*n", "Python Programming"))
+print(re.search(r"Py[a-z]*n", "Python Programming"))
+print(re.search(r"Py[a-z]*n", "Pyn"))
