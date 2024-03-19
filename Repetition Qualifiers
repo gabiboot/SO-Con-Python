@@ -1,0 +1,6 @@
+# asterisco (*) = coincide con cualquier caracter repetido tantas veces como sea posible, incluyendo cero
+ print(re.search(r"Py.*n", "Pygmalion"))
+#imprime: 
+<re.Match object; span=(0, 9), match='Pygmalion'>
+
+
