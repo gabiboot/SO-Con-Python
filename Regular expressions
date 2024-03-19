@@ -1,0 +1,22 @@
+#para excluir con barra invertida
+
+ print(re.search(r"\.com", "Pygmalion.com"))
+<re.Match object; span=(9, 13), match='.com'>
+
+#/W coincide con caracteres alfanumericos, no con espacios o con puntos
+# devuelve del 0, hasta el 1 porque muestra la primera coincidencia
+>>> print(re.search(r"\w", "Pygmalion.com"))
+<re.Match object; span=(0, 1), match='P'>
+>>>
+#aqui devuelve todo lo alfanumerico gracias al *
+>>> print(re.search(r"\w*", "Pygmalion.com"))
+<re.Match object; span=(0, 9), match='Pygmalion'>
+>>>
+"""
+^: Este es el ancla del comienzo de la línea, que asegura que la coincidencia debe comenzar al principio de la cadena.
+(.+): Este es el primer grupo de captura. .+ coincide con uno o más caracteres de cualquier tipo (excepto los saltos de línea). El paréntesis que lo rodea indica que es un grupo de captura, lo que significa que cualquier subcadena que coincida con esta parte de la expresión regular se capturará y se podrá acceder más tarde.
+([^/]+): Este es el segundo grupo de captura. [^/]+ coincide con uno o más caracteres que no sean una barra inclinada (/). Nuevamente, el paréntesis indica que es un grupo de captura.
+$: Este es el ancla del final de la línea, que asegura que la coincidencia debe terminar al final de la cadena."""
+
+/^(.+)/([^/]+)$/
+
