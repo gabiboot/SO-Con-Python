@@ -1,0 +1,22 @@
+#search: imprime palab porque es la primera coincidencia
+
+print(re.search(r"[a-zA-Z]{5}", "es una palabra de ejemplo ghost"))
+<re.Match object; span=(7, 12), match='palab'>
+#findall: podemos encontrar todas las coincidencias
+>>> print(re.findall(r"[a-zA-Z]{5}", "es una palabra de ejemplo ghost"))
+['palab', 'ejemp', 'ghost']
+
+# con /b (hay que invertir)
+ print(re.findall(r"\b [a-zA-Z]{5}\b", "imprime solo las coincidencias de 5 cinco alfacaracteres ghost"))
+[' cinco', ' ghost']
+
+#Rango {x,x}
+ print(re.findall(r"\w{4,10}", "imprime coincidencias de 4 a 10 caracteres de numeros o letras 555abc really like")) ['imprime', 'coincidenc', 'caracteres', 'numeros', 'letras', '555abc', 'really', 'like']
+>>>
+#Rango {x,}
+ print(re.findall(r"\w{4,}", "El rango tambien puede ser abiero sin limite de coicidencia"))
+['rango', 'tambien', 'puede', 'abiero', 'limite', 'coicidencia']
+
+# Buscando patron con rango
+>>> print(re.findall(r"s\w{,30}", "Aqui buscamos el patron 's' seguido de hasta 30 caracteres alfanumericos"))
+['scamos', 's', 'seguido', 'sta', 's', 's']
