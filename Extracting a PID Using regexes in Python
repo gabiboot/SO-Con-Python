@@ -1,0 +1,16 @@
+"""el corchete escapa con la barra, luego se abre parentesis para el grupo de coicidencia
+Con d+ busco los digitos y con la barra se escapa corchete nuevamente
+la funcion, si no encuentra coincidencia muestra una cadana vacia
+en vez de romper linea"""
+
+import re
+>>>
+>>> def extract_pid(log_line):
+...     regex = r"\[(\d+)\]"
+...     result = re.search(regex, log_line)
+...     if result is None:
+...         return ""
+...     return result[1]
+...
+>>> print(extract_pid("Este es un mensaje de error [456]"))
+456
