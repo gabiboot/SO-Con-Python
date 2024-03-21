@@ -1,0 +1,14 @@
+def rearrange_name(name):
+...     result = re.search(r"^(\w*), (\w*)$", name)
+...     if result is None:
+...         return name
+...     return "{} {}".format(result[2], result[1])
+...
+>>> print(rearrange_name("gabriela, moya"))
+moya gabriela
+>>>
+>>> print(rearrange_name("gabriela, moya-moreno"))
+gabriela, moya-moreno
+>>> print(rearrange_name("gabriela, le-moye. s"))
+gabriela, le-moye. s
+>>>
